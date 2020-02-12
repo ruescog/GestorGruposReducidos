@@ -51,4 +51,21 @@ public class Dia {
 
 		return false;
 	}
+	
+	public boolean equals(Object o) {
+		
+		Dia cast;
+		
+		if(this == o) return true;
+		
+		if(o instanceof Dia) {
+			cast = (Dia) o;
+			
+			for(Clase c : this.clases) if(!cast.clases.contains(c)) return false;
+			
+			return true;
+		}
+		
+		return false;
+	}
 }
